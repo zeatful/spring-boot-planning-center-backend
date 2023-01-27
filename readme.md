@@ -13,7 +13,7 @@ It utilizes the following technologies:
 
 
 ## Quick Start
-1. Create a `.env` file in the project with the below values (using your information)
+Create a `.env` file in the project with the below values (using your information)
 ```
     PLANNING_CENTER_APPLICATION_ID=YOUR_PLANNING_CENTER_APPLICATION_ID_HERE
     PLANNING_CENTER_SECRET=YOUR_PLANNING_CENTER_SECRET_HERE
@@ -24,8 +24,14 @@ It utilizes the following technologies:
     PGADMIN_EMAIL=admin@admin.com
     SPRING_PROFILES_ACTIVE=local
 ```
-2. Build the GraalVM image: `gradle bootBuildImage`
-3. Start the application using the created image: `docker-compose -f docker-compose-full.yml up -d`
+
+### Run the full application locally
+1. Build the GraalVM image: `gradle bootBuildImage`
+1. Start the application using the created image: `docker-compose up -d`
+
+### Run the spring-boot jar from Intellij or for debugging
+1. Start the database: `docker-compose -f docker-compose-db.yml up -d`
+2. Start the Spring Boot Application: `gradle bootRun`
 
 ## Swagger / Spring-Doc
 Access local Swagger UI for API via http://localhost:8080/webjars/swagger-ui/index.html
